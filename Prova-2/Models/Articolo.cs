@@ -9,7 +9,7 @@ namespace Prova_2.Models
         public string Nome { get; set; }
         [Required]
         
-        public decimal Prezzo {  get; set; } 
+        public int Prezzo {  get; set; } 
          [Required]
         public string Descrizione { get; set; }
         public string ImmagineCopertina { get; set; }

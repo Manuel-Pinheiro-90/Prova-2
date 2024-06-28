@@ -9,7 +9,7 @@ namespace Prova_2.Models
         public string Nome { get; set; }
         [Required(ErrorMessage = "Il campo {0} è obbligatorio.")]
         
-        public decimal Prezzo { get; set; }
+        public int Prezzo { get; set; }
         [Required(ErrorMessage = "Il campo {0} è obbligatorio.")]
         public string Descrizione { get; set; }
         [Required(ErrorMessage = "Il campo {0} è obbligatorio.")]
