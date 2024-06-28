@@ -1,0 +1,27 @@
+﻿@model Prova_2.Models.Articolo
+
+@{
+    ViewData["Title"] = "Dettaglio Articolo";
+}
+
+<h1 class="text-center">@Model.Nome</h1>
+
+<div class="row">
+    <div class="col-md-6"> 
+        <img src="@Model.ImmagineCopertina" class="img-fluid" alt="@Model.Nome" style="width: 18rem;" />
+        <img src="@Model.ImmagineAggiuntiva1" class="img-fluid" alt="immagine aggiuntiva 1" style="width: 18rem;" />
+        <img src="@Model.ImmagineAggiuntiva2" class="img-fluid" alt="immagine aggiuntiva 2" style="width: 18rem;" />
+
+    </div>
+    <div class="col-md-6">
+        <h3>Prezzo: @Model.Prezzo $ </h3>
+       <p>@Model.Descrizione </p>
+    </div>
+
+
+
+</div>
+
+<div>
+    <a asp-action="Index">Torna alla Vetrina</a>
+</div>

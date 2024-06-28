@@ -1,0 +1,69 @@
+﻿@model Prova_2.Models.ArticoloInputModel
+
+@{
+    ViewData["Title"] = "Crea Articolo";
+}
+
+<h1>Crea Articolo</h1>
+
+
+<h4>Articolo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Crea" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Prezzo" class="control-label"></label>
+                <input asp-for="Prezzo" class="form-control" />
+                <span asp-validation-for="Prezzo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Descrizione" class="control-label"></label>
+                <textarea asp-for="Descrizione" class="form-control"></textarea>
+                <span asp-validation-for="Descrizione" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ImmagineCopertina" class="control-label"></label>
+                <input asp-for="ImmagineCopertina" type="file" class="form-control" />
+                <span asp-validation-for="ImmagineCopertina" class="text-danger" ></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ImmagineAggiuntiva1" class="control-label"></label>
+                <input asp-for="ImmagineAggiuntiva1" type="file" class="form-control" />
+                <span asp-validation-for="ImmagineAggiuntiva1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ImmagineAggiuntiva2" class="control-label"></label>
+                <input asp-for="ImmagineAggiuntiva2" type="file" class="form-control" />
+                <span asp-validation-for="ImmagineAggiuntiva2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Crea" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="my-4">
+    <a asp-action="Index">Torna alla Vetrina</a>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

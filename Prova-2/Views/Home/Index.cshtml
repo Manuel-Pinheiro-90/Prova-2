@@ -1,0 +1,52 @@
+﻿
+@model IEnumerable<Prova_2.Models.Articolo>
+
+@{
+    ViewData["Title"] = "Vetrina";
+}
+
+<h1 class="text-center fs-1 my-4"> Vetrina: Carica le tue scarpe preferite</h1>
+
+<div class="row">
+  <div class="col-12 my-4">
+        <div class="card" >
+            <img src="https://c.wallhere.com/photos/4e/39/red_6_toronto_ontario_canada_black_lens_50mm-769681.jpg!d" class="card-img-top" alt="...">
+            <div class="card-body bg-dark">
+                <p class="card-text text-center"> Osserva la nostra vasta gamma di scarpe da tennis, o se non ne vedi, creane alcune tu!</p>
+            </div>
+        </div>
+
+
+  </div>
+
+</div>
+
+    <div class="row">
+        @foreach(var articolo in Model)
+        {
+        <div class="col-md-4 my-4">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="@articolo.ImmagineCopertina" alt="@articolo.Nome"  />
+            <div class="card-body bg-dark text-center">
+                        <h5 class="card-title">@articolo.Nome</h5>
+                        <p class="card-text">@articolo.Prezzo €</p>
+                        <a href="@Url.Action("Dettagli", new { id = articolo.Id })" class="btn btn-primary">Dettagli</a>
+
+            </div>
+            
+            
+            </div>
+
+
+
+         </div>
+        }
+    </div>
+
+<div class="my-4">
+        <a asp-action="Crea" class="btn btn-primary">Aggiungi Articolo</a>
+    </div>
+
+
+
+
